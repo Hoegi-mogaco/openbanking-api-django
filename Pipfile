@@ -5,11 +5,23 @@ verify_ssl = true
 
 [dev-packages]
 pytest = "*"
+pre-commit = "*"
+pytest-django = "*"
+mixer = "*"
 flake8 = "*"
+mypy = "*"
 
 [packages]
-django = "~=3.0.0"
+django = "~=3.0"
+python-dotenv = "*"
 djangorestframework = "*"
 
 [requires]
 python_version = "3.8"
+
+[scripts]
+precommit = "pre-commit install"
+pytest = "bash -c 'cd fintech && pytest'"
+makemigrations = "bash -c 'cd fintech && python manage.py makemigrations'"
+migrate = "bash -c 'cd fintech && python manage.py migrate'"
+runserver = "bash -c 'cd fintech && python manage.py runserver'"
