@@ -1,6 +1,30 @@
--   repo: https://gitlab.com/pycqa/flake8
+repos:
+  - repo: https://github.com/pre-commit/mirrors-isort
+    rev: '' 
+    hooks:
+      - id: isort
+  - repo: https://github.com/psf/black
+    rev: stable
+    hooks:
+      - id: black
+        language_version: python3.8
+  - repo: https://gitlab.com/pycqa/flake8
     rev: ''
     hooks:
-    - id: flake8
-      exclude: .cache,.venv,.svn,CVS,.bzr,.hg,.git,__pycache__,.tox
-      args: [--max-line-length=119, --isolated]
+      - id: flake8
+        exclude: .cache,.venv,.svn,CVS,.bzr,.hg,.git,__pycache__,.tox
+        args: [--max-line-length=119, --isolated]
+  # - repo: local
+  #   hooks:
+  #     - id: pytest
+  #       name: Check pytest unit tests pass
+  #       entry: pipenv run pytest
+  #       pass_filenames: false
+  #       language: system
+  #       types: [python]
+  #     - id: mypy
+  #       name: Check mypy static types match
+  #       entry: pipenv run mypy . --ignore-missing-imports
+  #       pass_filenames: false
+  #       language: system
+  #       types: [python]
