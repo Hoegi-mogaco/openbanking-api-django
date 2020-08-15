@@ -8,6 +8,7 @@ pytest = "*"
 pre-commit = "*"
 pytest-django = "*"
 mixer = "*"
+flake8 = "*"
 
 [packages]
 django = "~=3.0"
